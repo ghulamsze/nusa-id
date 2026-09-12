@@ -1,0 +1,34 @@
+/* Glassmorphism Toast Notification Overlay System */
+#toast-container {
+  position: fixed;
+  top: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 22rem;
+  padding: 0 1rem;
+  pointer-events: none; /* Cegah memblokir klik elemen di bawahnya */
+}
+
+.toast-glass {
+  pointer-events: auto;
+  background: rgba(253, 229, 231, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(235, 78, 112, 0.3);
+  color: #1F2937;
+  border-radius: 1rem;
+  padding: 0.85rem 1.15rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  box-shadow: 0 8px 32px 0 rgba(235, 78, 112, 0.15);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}

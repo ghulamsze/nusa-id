@@ -1,0 +1,155 @@
+/* ==========================================================================
+   Map Drawer Container, Layout Grid & NusaStay InfoWindow
+   ========================================================================== */
+
+.service-drawer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  background-color: var(--color-surface);
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  border: 1px solid var(--color-line);
+  box-shadow: var(--shadow-md);
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-drawer.open {
+  transform: translateY(0);
+}
+
+.drawer-header {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.drawer-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--color-ink-muted);
+  cursor: pointer;
+}
+
+.service-modal-body {
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  background-color: var(--color-surface-tint);
+}
+
+.map-container {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+}
+
+.map-fallback-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 320px;
+  padding: 24px;
+  text-align: center;
+}
+
+.fallback-icon { font-size: 2rem; margin-bottom: 8px; }
+.fallback-title { font-weight: 700; margin: 0 0 4px 0; }
+.fallback-msg { font-size: 0.8125rem; color: var(--color-ink-muted); margin: 0; }
+
+@media (min-width: 1024px) {
+  .service-drawer {
+    position: relative;
+    transform: none;
+    border-radius: var(--radius-card);
+    max-height: none;
+    box-shadow: none;
+    margin: 16px;
+  }
+  .map-wrapper { min-height: 420px; }
+}
+
+/* InfoWindow Custom Styling */
+.gm-style .gm-style-iw-c {
+  padding: 0 !important;
+  border-radius: var(--radius-card) !important;
+  box-shadow: var(--shadow-md) !important;
+  background-color: var(--color-surface) !important;
+}
+
+.gm-style .gm-style-iw-d { overflow: hidden !important; }
+
+.hotel-infowindow {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hotel-thumb {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+}
+
+.hotel-details {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hotel-title {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: var(--color-ink);
+}
+
+.hotel-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.hotel-rating { color: #EB4E70; }
+.hotel-price { color: var(--color-ink-muted); }
+
+.btn-select-hotel {
+  margin-top: 4px;
+  width: 100%;
+  height: 32px;
+  border: none;
+  border-radius: var(--radius-control);
+  background: var(--gradient-primary);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  cursor: pointer;
+}

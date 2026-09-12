@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Services Grid & Service Icons
+   ========================================================================== */
+
+.service-categories {
+  padding-inline: var(--space-md, 16px);
+  margin-top: 16px;
+}
+
+.service-categories h2 {
+  font-size: 1.125rem;
+  font-weight: 800;
+  margin-bottom: var(--space-sm, 12px);
+  color: var(--color-ink);
+}
+
+.category-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.category-item {
+  width: 100%;
+  padding: 14px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+.category-item[data-selected="true"] {
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+/* Dynamic SVG Mask Icon */
+.service-icon {
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  flex-shrink: 0;
+
+  /* Mode Terang: Warna Hitam Pekat */
+  background-color: #1F1B1D;
+
+  -webkit-mask-image: var(--icon);
+  mask-image: var(--icon);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+/* Mode Gelap: Warna Teks/Kuning-Pink Terang agar Kontras */
+[data-theme="dark"] .service-icon {
+  background-color: #F7EFF4;
+}
+
+.category-label {
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.promo-section {
+  padding: var(--space-md, 16px);
+}
+
+.promo-card {
+  background: var(--gradient-secondary);
+  border: 1px solid var(--color-secondary);
+  border-radius: var(--radius-card);
+  padding: var(--space-lg, 24px);
+  box-shadow: var(--shadow-sm);
+}
+
+.promo-card h3 {
+  color: var(--color-primary);
+  font-size: 1rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.promo-card p {
+  color: var(--color-ink);
+  font-size: 0.875rem;
+  margin-top: 0.35rem;
+  margin-bottom: 0;
+  line-height: 1.4;
+}

@@ -1,0 +1,78 @@
+/* Dark & Light Theme Color Tokens */
+:root {
+  --primary-color: #EB4E70;
+  --secondary-color: #FD9799;
+  --soft-pink: #FDE5E7;
+  --bg-surface: #FCFBFC;
+  --bg-card: #FFFFFF;
+  --text-main: #1F2937;
+  --text-muted: #6B7280;
+  --border-color: #FDE5E7;
+  --rose-gradient: linear-gradient(135deg, #EB4E70 0%, #FD9799 100%);
+}
+
+[data-theme='dark'] {
+  --bg-surface: #140B0D;
+  --bg-card: #221216;
+  --text-main: #F3F4F6;
+  --text-muted: #FD9799;
+  --border-color: #381A21;
+  --soft-pink: #2A141A;
+}
+
+body {
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Tactile Micro-Animations */
+.btn-tactile {
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.btn-tactile:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(235, 78, 112, 0.25);
+  outline: 2px solid var(--soft-pink);
+}
+.btn-tactile:active {
+  transform: scale(0.97);
+}
+
+/* Primary Action Pulse Animation */
+@keyframes buttonPulse {
+  0% { box-shadow: 0 0 0 0 rgba(235, 78, 112, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(235, 78, 112, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(235, 78, 112, 0); }
+}
+
+.btn-pulse {
+  animation: buttonPulse 2s infinite;
+}
+
+/* Spring & Bounce Keyframes for Modals */
+@keyframes drawerSpringUp {
+  0% { transform: translateY(100%); }
+  75% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes modalBounceIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  70% { transform: scale(1.03); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-drawer-spring {
+  animation: drawerSpringUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-modal-bounce {
+  animation: modalBounceIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Pull to Refresh Loader */
+#ptr-indicator {
+  will-change: transform, opacity;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}

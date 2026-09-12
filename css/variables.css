@@ -1,0 +1,27 @@
+:root {
+  --primary-color: #EB4E70;
+  --secondary-color: #FD9799;
+  --soft-pink: #FDE5E7;
+  --bg-surface: #FCFBFC;
+  --bg-card: #FFFFFF;
+  --text-main: #1F2937;
+  --text-muted: #6B7280;
+  --border-color: #FDE5E7;
+  --rose-gradient: linear-gradient(135deg, #EB4E70 0%, #FD9799 100%);
+}
+
+/* Dukungan ganda untuk kelas .dark Tailwind & atribut data-theme */
+.dark, [data-theme='dark'] {
+  --bg-surface: #140B0D;
+  --bg-card: #221216;
+  --text-main: #F3F4F6;
+  --text-muted: #FD9799;
+  --border-color: #381A21;
+  --soft-pink: #2A141A;
+}
+
+body {
+  background-color: var(--bg-surface) !important;
+  color: var(--text-main) !important;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
